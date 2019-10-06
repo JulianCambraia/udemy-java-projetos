@@ -79,7 +79,7 @@ public class Trabalhador {
 		for (HoraContrato c : contratos) {
 			cal.setTime(c.getDataInicioContrato());
 			int cAno = cal.get(Calendar.YEAR);
-			int cMes = cal.get(Calendar.MONTH + 1);
+			int cMes = 1+cal.get(Calendar.MONTH);
 			if (ano == cAno && mes == cMes) {
 				soma += c.valorTotal();
 			}
