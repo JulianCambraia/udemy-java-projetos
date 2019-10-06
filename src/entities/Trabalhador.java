@@ -1,6 +1,9 @@
 package entities;
 
-import enums.NivelTrabalhoEnum;
+import java.util.ArrayList;
+import java.util.List;
+
+import entities.enums.NivelTrabalhoEnum;
 
 public class Trabalhador {
 
@@ -8,15 +11,21 @@ public class Trabalhador {
 	private NivelTrabalhoEnum nivelTrabalhoEnum;
 	private Double salarioBase;
 
+	private Departamento departamento;
+
+	private List<HoraContrato> contratos = new ArrayList<HoraContrato>();
+
 	public Trabalhador() {
 		super();
 	}
 
-	public Trabalhador(String nome, NivelTrabalhoEnum nivelTrabalhoEnum, Double salarioBase) {
+	public Trabalhador(String nome, NivelTrabalhoEnum nivelTrabalhoEnum, Double salarioBase,
+			Departamento departamento) {
 		super();
 		this.nome = nome;
 		this.nivelTrabalhoEnum = nivelTrabalhoEnum;
 		this.salarioBase = salarioBase;
+		this.departamento = departamento;
 	}
 
 	public String getNome() {
@@ -42,17 +51,21 @@ public class Trabalhador {
 	public void setSalarioBase(Double salarioBase) {
 		this.salarioBase = salarioBase;
 	}
-	
-	public void adicionarContrato(HoraContrato contrato) {
-		
+
+	public Departamento getDepartamento() {
+		return departamento;
 	}
-	
-	public void removerContrato(HoraContrato contrato) {
-		
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
-	
-	public Double valorGanho(Integer ano, Integer mes) {
-		return null;
+
+	public List<HoraContrato> getContratos() {
+		return contratos;
 	}
-	
+
+	public void setContratos(List<HoraContrato> contratos) {
+		this.contratos = contratos;
+	}
+
 }
